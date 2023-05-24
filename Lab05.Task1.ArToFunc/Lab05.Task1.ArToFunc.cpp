@@ -1,4 +1,156 @@
-//#include <iostream>
+#include <iostream>
+using namespace std;
+
+
+// ”пражнение 2
+
+void arrayFunc(int N, int a[]);
+
+int main() {
+
+	const int N = 10;
+
+	int a[N] = { 1, 25, 6, 32, 43, 5, 96, 23, 4, 55 };
+
+	arrayFunc(N, a);
+
+}
+
+void arrayFunc(int N, int a[]) {
+
+	int min = 0; // дл§ записи минимального значени§
+	int buf = 0; // дл§ обмена значени§ми
+
+	for (int i = 0; i < N; i++)
+	{
+		min = i; // номер текущей §чейки, как €чейки с минимальным значением
+		// в цикле найдем реальный номер §чейки с минимальным значением
+		for (int j = i + 1; j < N; j++)
+			min = (a[j] < a[min]) ? j : min;
+		// перестановка этого элемента, помен€в его местами с текущим
+		if (i != min)
+		{
+			buf = a[i];
+			a[i] = a[min];
+			a[min] = buf;
+		}
+	}
+
+	for (int i = 0; i < N; i++)
+	{
+		cout << a[i] << '\t';
+	}
+
+}
+
+
+//-------------------------------------------------------------------------------------
+
+// ”пражнение 1
+
+void arrayFunc2(int, int mas[]);
+
+int main() {
+
+	const int n = 5;
+	int mas[n];
+
+	for (int i = 0; i < n; i++)
+	{
+		cout << "mas[" << i << "]=";
+		cin >> mas[i];
+	}
+
+	arrayFunc2(n, mas);
+}
+
+void arrayFunc2(int n, int mas[]) {
+
+	int s = 0;
+
+	for (int i = 0; i < n; i++)
+	{
+		s += mas[i];
+	}
+	cout << s << '\n';
+
+	double average = s / n;
+	cout << average << '\n';
+
+	int s1 = 0;
+
+	for (int i = 0; i < n; i++)
+	{
+		if (mas[i] < 0)
+		{
+			s1 += mas[i];
+		}
+	}
+	cout << s1 << '\n';
+
+	int s2 = 0;
+
+	for (int i = 0; i < n; i++)
+	{
+		if (mas[i] > 0)
+		{
+			s2 += mas[i];
+		}
+	}
+	cout << s2 << '\n';
+
+	int s3 = 0;
+
+	for (int i = 0; i < n; i++)
+	{
+		if (mas[i] % 2 != 0)
+		{
+			s3 += mas[i];
+		}
+	}
+	cout << s3 << '\n';
+
+
+	int s4 = 0;
+
+	for (int i = 0; i < n; i++)
+	{
+		if (mas[i] % 2 == 0)
+		{
+			s4 += mas[i];
+		}
+	}
+	cout << s4 << '\n';
+
+	int min = INT_MAX, max = INT_MIN;
+	int minIndex, maxIndex;
+
+	for (int i = 0; i < n; i++)
+	{
+		if (mas[i] < min) {
+			min = mas[i];
+			minIndex = i;
+		}
+
+		if (mas[i] > max) {
+			max = mas[i];
+			maxIndex = i;
+		}
+	}
+
+	cout << "The min element is " << min << '\n';
+	cout << "The max element is " << max << '\n';
+
+
+	int product = 1;
+
+	for (int i = std::min(minIndex, maxIndex) + 1; i < std::max(minIndex, maxIndex); i++)
+	{
+		product *= mas[i];
+	}
+
+	cout << "The product of numbers between min and max values is: " << product << '\n';
+}
 
 
 //#include <vector>
