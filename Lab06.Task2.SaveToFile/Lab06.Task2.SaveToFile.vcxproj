@@ -129,6 +129,10 @@
   <ItemGroup>
     <ClCompile Include="Lab06.Task2.SaveToFile.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="NotSortedArray.txt" />
+    <Text Include="SortedArray.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

@@ -130,7 +130,9 @@
     <ClCompile Include="Lab06.Task3.SaveToJson.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="NotSortedArray.json" />
     <None Include="packages.config" />
+    <None Include="SortedArray.json" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

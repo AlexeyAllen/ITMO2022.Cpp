@@ -21,5 +21,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="polo.json" />
+    <None Include="test" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="poem.txt" />
   </ItemGroup>
 </Project>
