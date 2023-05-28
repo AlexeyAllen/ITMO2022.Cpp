@@ -7,18 +7,77 @@ struct Time {
 	int minutes;
 	int seconds;
 
-	void SumMinsSecs() {
+	int getSeconds(Time t) {
 
-		int sum;
-		sum = minutes * 60 + seconds;
-		std::cout << sum << " секунд" << '\n';
+		t.seconds = t.hours * 3600 + t.minutes * 60 + t.seconds;
+		int i = t.seconds;
+		return i;
 	}
 
-	void ExtractSecsFromMins() {
+	Time convertBackToHMS(int seconds) {
 
-		int dif;
-		dif = minutes * 60 - seconds;
-		std::cout << dif << " секунд" << '\n';
+		Time timeDif = { 0,0,0 };
+		timeDif.seconds = seconds;
+
+		while (timeDif.seconds >= 60)
+		{
+			timeDif.seconds -= 60;
+			timeDif.minutes++;
+		}
+
+		while (timeDif.minutes >= 60)
+		{
+			timeDif.minutes -= 60;
+			timeDif.hours++;
+		}
+
+		return timeDif;
+	}
+
+	void sumTime(Time t1, Time t2) {
+
+		Time t = { 0,0,0 };
+
+		t.hours = t1.hours + t2.hours;
+		t.minutes = t1.minutes + t2.minutes;
+		t.seconds = t1.seconds + t2.seconds;
+
+		while (t.seconds >= 60)
+		{
+			t.seconds -= 60;
+			t.minutes++;
+		}
+
+		while (t.minutes >= 60)
+		{
+			t.minutes -= 60;
+			t.hours++;
+		}
+
+		std::cout << "Summed time is: " << t.hours << ":" << t.minutes << ":" << t.seconds << '\n';
+	}
+
+	void extractTime(Time t1, Time t2) {
+
+		Time t = { 0,0,0 };
+		int secondsTime1 = getSeconds(t1);
+		int secondsTime2 = getSeconds(t2);
+		int secondsDif;
+
+		if (secondsTime1 >= secondsTime2)
+		{
+			secondsDif = secondsTime1 - secondsTime2;
+
+			t = convertBackToHMS(secondsDif);
+		}
+		else
+		{
+			secondsDif = secondsTime2 - secondsTime1;
+
+			t = convertBackToHMS(secondsDif);
+		}
+
+		std::cout << "Extracted time is: " << t.hours << ":" << t.minutes << ":" << t.seconds << '\n';
 	}
 };
 
@@ -31,9 +90,10 @@ Time ConvertTime(Time t)
 	return tSec;
 }
 
+
 Time InputTime()
 {
-	Time t;
+	Time t = { 0,0,0 };
 	std::cout << "\n¬ведите кол-во часов: ";
 	std::cin >> t.hours;
 	std::cout << "¬ведите кол-во минут: ";
@@ -46,7 +106,6 @@ Time InputTime()
 void ShowTime(Time t)
 {
 	std::cout << t.seconds << " секунд" << '\n';
-
 }
 
 int main() {
@@ -59,8 +118,9 @@ int main() {
 	t2 = ConvertTime(t1);
 	ShowTime(t2);
 
-	t1.SumMinsSecs();
-	t1.ExtractSecsFromMins();
+	Time t3 = { 2,30,40 };
+	t1.sumTime(t1, t3);
+	t1.extractTime(t1, t3);
 }
 
 
