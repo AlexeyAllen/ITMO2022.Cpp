@@ -8,13 +8,13 @@ struct QuadrEqRoots {
 	int flag;
 };
 
-QuadrEqRoots Myroot(double, double, double, QuadrEqRoots&);
+QuadrEqRoots Myroot(double, double, double, QuadrEqRoots);
 void PrintRoots(QuadrEqRoots);
 
 int main() {
 
 	double a, b, c;
-	QuadrEqRoots roots;
+	QuadrEqRoots roots = {0,0,0};
 
 	std::cout << "Please enter coefficients a, b and c: ";
 	std::cin >> a >> b >> c;
@@ -24,7 +24,7 @@ int main() {
 	PrintRoots(roots);
 }
 
-QuadrEqRoots Myroot(double a, double b, double c, QuadrEqRoots &root) {
+QuadrEqRoots Myroot(double a, double b, double c, QuadrEqRoots root) {
 
 	double discrim;
 	discrim = b * b - 4 * a * c;
