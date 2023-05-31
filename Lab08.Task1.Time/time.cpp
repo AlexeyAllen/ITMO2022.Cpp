@@ -63,13 +63,40 @@ int Time::get_seconds() const {
 	return Time::seconds;
 }
 
-Time Time::sum_time(Time t1, Time t2) const {
+//Time Time::sum_time(Time t1, Time t2) const {
+//
+//	Time t3;
+//
+//	int hours = t1.get_hours() + t2.get_hours();
+//	int minutes = t1.get_minutes() + t2.get_minutes();
+//	int seconds = t1.get_seconds() + t2.get_seconds();
+//
+//	while (seconds >= 60)
+//	{
+//		seconds -= 60;
+//		minutes++;
+//	}
+//
+//	while (minutes >= 60)
+//	{
+//		minutes -= 60;
+//		hours++;
+//	}
+//
+//	t3.set_hours(hours);
+//	t3.set_minutes(minutes);
+//	t3.set_seconds(seconds);
+//
+//	return t3;
+//}
+
+Time Time::sum_time(const Time& t2) const {
 
 	Time t3;
 
-	int hours = t1.get_hours() + t2.get_hours();
-	int minutes = t1.get_minutes() + t2.get_minutes();
-	int seconds = t1.get_seconds() + t2.get_seconds();
+	int hours = get_hours() + t2.get_hours();
+	int minutes = get_minutes() + t2.get_minutes();
+	int seconds = get_seconds() + t2.get_seconds();
 
 	while (seconds >= 60)
 	{

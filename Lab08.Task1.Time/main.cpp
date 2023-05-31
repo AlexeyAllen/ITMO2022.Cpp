@@ -32,7 +32,7 @@ int main() {
 
 	Time time3(hours, minutes, seconds);
 
-	time1 = time1.sum_time(time2, time3);
+	time1 = time2.sum_time(time3);
 
 	time1.show_time(time1);
 }

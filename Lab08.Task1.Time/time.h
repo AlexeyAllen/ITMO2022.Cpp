@@ -4,7 +4,7 @@ class Time {
 public:
 	Time();
 	Time(int, int, int);
-	Time sum_time(Time, Time) const;
+	Time sum_time(const Time&) const;
 	void show_time(Time) const;
 	void set_hours(int);
 	void set_minutes(int);
