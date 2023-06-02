@@ -12,7 +12,13 @@ public:
 	int get_hours() const;
 	int get_minutes() const;
 	int get_seconds() const;
-	
+	void check_if_num(std::string);
+
+	class ExTime {
+	public:
+		ExTime(std::string);
+		std::string errMessage;
+	};
 private:
 	int hours;
 	int minutes;
