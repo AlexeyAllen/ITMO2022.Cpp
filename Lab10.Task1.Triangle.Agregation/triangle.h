@@ -4,7 +4,7 @@
 class Triangle {
 
 public:
-	Triangle(Dot d1, Dot d2, Dot d3); // агрегация, т.к. вначале создаются объекты класса Dot, затем они передаются
+	Triangle(Dot* d1, Dot* d2, Dot* d3); // агрегация, т.к. вначале создаются объекты класса Dot, затем они передаются
 	// в качестве параметров конструктора классу Triangle, для использования в качестве части класса Triangle
 
 	void sideL();
@@ -12,9 +12,9 @@ public:
 	void areaTr();
 
 private:
-	Dot d1;
-	Dot d2;
-	Dot d3;
+	Dot* d1;
+	Dot* d2;
+	Dot* d3;
 
 	double side1;
 	double side2;

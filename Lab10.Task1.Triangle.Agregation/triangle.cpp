@@ -2,7 +2,7 @@
 #include "math.h"
 #include <iostream>
 
-Triangle::Triangle(Dot dot1, Dot dot2, Dot dot3) {
+Triangle::Triangle(Dot *dot1, Dot *dot2, Dot *dot3) {
 
 	d1 = dot1;
 	d2 = dot2;
@@ -11,9 +11,9 @@ Triangle::Triangle(Dot dot1, Dot dot2, Dot dot3) {
 
 void Triangle::sideL() {
 
-	side1 = d1.distanceTo(d2);
-	side2 = d2.distanceTo(d3);
-	side3 = d3.distanceTo(d1);
+	side1 = d1->distanceTo(*d2);
+	side2 = d2->distanceTo(*d3);
+	side3 = d3->distanceTo(*d1);
 
 	std::cout << side1 << " " << side2 << " " << side3 << '\n';
 }

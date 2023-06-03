@@ -3,7 +3,10 @@
 
 int main() {
 
-	Dot d1(0, 0), d2(0, 2), d3(2,3);
+	Dot* d1 = new Dot(0, 0);
+	Dot* d2 = new Dot(0, 2);
+	Dot* d3 = new Dot(2, 3);
+		
 	Triangle triangle(d1, d2, d3);
 
 	triangle.sideL();
