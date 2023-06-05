@@ -16,9 +16,9 @@ private:
 	Dot* d2;
 	Dot* d3;
 
-	double side1;
+	/*double side1;
 	double side2;
 	double side3;
 
-	double perim;
+	double perim;*/
 };
