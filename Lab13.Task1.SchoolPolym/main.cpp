@@ -21,12 +21,25 @@ int main()
 	scores.push_back(3);
 	scores.push_back(3);
 	scores.push_back(3);
-	student* stud = new student("Петров", "Иван", "Алексеевич", scores);
+	/*student* stud = new student("Петров", "Иван", "Алексеевич", scores);
 	stud->get_person_data();
 
 	unsigned int teacher_work_time = 40;
 	teacher* tch = new teacher("Сергеев", "Дмитрий", "Сергеевич", teacher_work_time);
-	tch->get_person_data();
+	tch->get_person_data();*/
+
+	human man("Иванов", "Иван", "Иванович");
+	student student("Петров", "Иван", "Алексеевич", scores);
+	teacher teacher("Сергеев", "Дмитрий", "Сергеевич", 40);;
+
+	human* poly_man = &man;
+	poly_man->get_person_data();
+
+	poly_man = (human*)&student;
+	poly_man->get_person_data();
+
+	poly_man = (human*)&teacher;
+	poly_man->get_person_data();
 
 	return 0;
 }
