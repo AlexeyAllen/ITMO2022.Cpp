@@ -1,0 +1,25 @@
+
+me: Aleksandr
+Second name: Sergeevich
+Last name: Ivanov
+City address: Moscow
+Phone number: 89065678990
+
+-------------------------------
+Name: Michail
+Second name: Michail
+Last name: Sidorov
+City address: Moscow
+Phone number: 889065678991
+Degree from University: MSU
+Year degree confered: 1970
+
+-------------------------------
+Name: Michail
+Second name: Vladimirovish
+Last name: Sidorov
+City address: Moscow
+Phone number: 889065678991
+University tutor Id: 23456
+
+-------------------------------
